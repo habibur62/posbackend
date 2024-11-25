@@ -19,6 +19,9 @@ const allOrdersController = require('../controller/order/allOrdersController')
 const addStaffController = require('../controller/addStaff')
 const updatedStaffCrontroller = require('../controller/updateStaffController')
 const deleteStaff = require('../controller/deleteStaff')
+const addCategory = require('../controller/product/addCategory')
+const allCategory = require('../controller/product/allCategory')
+const deleteCategory = require('../controller/product/deleteCategory')
 
 
 
@@ -40,6 +43,13 @@ router.post("/all-orders", authToken, allOrdersController)
 router.post("/add-staff", authToken, addStaffController)
 router.put("/update-staff", authToken, updatedStaffCrontroller)
 router.delete("/delete-staff", authToken, deleteStaff)
+
+//add category
+router.post("/add-category", authToken, addCategory)
+router.post("/all-category", authToken, allCategory)
+router.delete("/:productId", authToken, deleteCategory)
+
+
 
 
 //product CRUD
